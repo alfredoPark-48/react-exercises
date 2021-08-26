@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import users from "./users-data";
+import "./styles.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	return (
+		<div className="App">
+			<div className="page-deets">
+				<h2>Loop Over an Array of Data</h2>
+			</div>
+
+			{/* Iterate over imported array in userData */}
+			{users.map((user) => {
+				return (
+					<div className="users">
+						<div>
+							<h2>{user.name}</h2>
+							<p>{user.location}</p>
+							<p>{user.car}</p>
+						</div>
+					</div>
+				);
+			})}
+		</div>
+	);
+};
 
 export default App;
